@@ -24,7 +24,7 @@ end
 always
 begin
 	#10 clk <= ~clk;
-	//$display("Read reg value: %b", sys.lsyou.tmp);
+	$display("Read reg value: %b", sys.lsyou.tmp);
 	$display("Write mempry value: %b%b", sys.mem.memory_array[2], sys.mem.memory_array[3]);
 end
 

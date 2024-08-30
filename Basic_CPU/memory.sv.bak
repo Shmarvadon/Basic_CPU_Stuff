@@ -8,11 +8,13 @@ input chip_select);
 reg [7:0] memory_array [65536:0];
 reg [7:0] temp_data;
 
-always @(negedge clk) begin
+always @(posedge clk) begin
 	if (write_enable)
 		memory_array[addr] <= data;
 		//$display("Write memory value: %b", data);
-		
+end
+
+always @ (addr or write_enable) begin
 	if (!write_enable)
 		temp_data <= memory_array[addr];
 end
