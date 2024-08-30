@@ -1,0 +1,10 @@
+module lsu(
+input clk,
+input [15:0] addr,
+inout [7:0] data,
+inout [15:0] reg,
+input load_or_store,
+input width,
+input enable)
+
+endmodule

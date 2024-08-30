@@ -1,6 +1,42 @@
 `timescale 1ns / 100ps
 
 
+// CPU testbench.
+module testbench;
+
+reg clk;
+
+
+system sys(clk);
+
+// Setup UUT(s)
+initial 
+begin
+	clk = 0;
+	
+	// Set first 2 memory locations to value of 64.
+	sys.mem.memory_array [0] = 64;
+	sys.mem.memory_array [1] = 32;
+end
+
+
+// Modulates the clock.
+always
+begin
+	#10 clk <= ~clk;
+	$display("Read reg value: %b", sys.lsyou.tmp);
+	$display("Write mempry value: %b%b", sys.mem.memory_array[2], sys.mem.memory_array[3]);
+end
+
+endmodule
+
+
+
+
+
+
+
+/*
 // memory testbench.
 module testbench;
 
@@ -46,6 +82,7 @@ begin
 	write_enable = 1;
 	#20;
 	write_enable = 0;
+	$display("Bus value %d written to address %h", bussy, addr);
 
 // Delay a bit then write 0x00 to 0x0010
 	#40;
@@ -63,6 +100,8 @@ begin
 end
 
 endmodule
+*/
+
 
 
 
