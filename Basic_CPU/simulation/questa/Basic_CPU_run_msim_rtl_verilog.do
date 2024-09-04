@@ -8,6 +8,8 @@ vmap work rtl_work
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv}
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv}
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv}
+vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv}
+vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv}
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv}
 
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv}

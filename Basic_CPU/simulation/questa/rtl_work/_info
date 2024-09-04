@@ -12,73 +12,125 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 dC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/simulation/questa
 T_opt
-Z2 !s110 1725031313
-V@0bc>B74EM4gzUBEZmLSI2
+Z2 !s110 1725455730
+V7J<m2Rh^VoOOoTm8jP5kW0
 04 9 4 work testbench fast 0
-=1-f46b8c9066d3-66d1e391-2f1-3e9c
+=1-f46b8c9066d3-66d85d72-283-5ed4
 R0
 !s12b OEM100
-!s124 OEM10U5 
+!s124 OEM10U7 
 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
 Z3 tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
-vlsu
-2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv
+valu
+2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv
 Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R2
+Z5 !s110 1725455729
 !i10b 1
-!s100 nMNJVBQg;mVF:_I:=zIO;1
-IP_z>cQz8L?kHIIHD7G]850
+!s100 3dcYCLRUXZBUb68PdD[2;2
+IG6WlSgQ>zSN1H?4M8QNeK2
 S1
 R1
-w1725031068
-8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv
-FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv
-!i122 2
-L0 1 119
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 OL;L;2023.3;77
+w1725455701
+8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv
+FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv
+!i122 4
+L0 1 44
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z7 !s108 1725031312.000000
+Z8 !s108 1725455729.000000
+!s107 C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU|C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv|
+!i113 0
+Z9 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 !s92 -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vcpu
+2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv
+R4
+R5
+!i10b 1
+!s100 QGa]WNPClMQh8kf4E][Ji3
+IQ`W0[foOLMPbbR5j4^@TQ2
+S1
+R1
+w1725455379
+8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv
+FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv
+!i122 3
+L0 1 110
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU|C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv|
+!i113 0
+R9
+R10
+R3
+vlsu
+2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv
+R4
+R5
+!i10b 1
+!s100 F:LVkCh1DfSQ2`mbDUQNA2
+I@lEfjLYaG8FgU1P]9QOAh1
+S1
+R1
+w1725452965
+8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv
+FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv
+!i122 2
+L0 1 98
+R6
+R7
+r1
+!s85 0
+31
+R8
 !s107 C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU|C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv|
 !i113 0
-Z8 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z9 !s92 -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R9
+R10
 R3
 vmemory
 2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv
 R4
-Z10 !s110 1725031312
+R5
 !i10b 1
-!s100 :ROP]VHEoJeUDi;nC21Cz3
-IAh9j@NLFXDf_bj88BX6@^0
+!s100 VZfS>UG4:C>a8H454R@2X2
+IW1PY5WKzhSgC@jQJ;X0n51
 S1
 R1
-w1725028843
+w1725455475
 8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv
 FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv
 !i122 1
-L0 1 22
-R5
+L0 1 34
 R6
+R7
 r1
 !s85 0
 31
-R7
+R8
 !s107 C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU|C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv|
 !i113 0
-R8
 R9
+R10
 R3
 vregs
 2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv
 R4
-R2
+R5
 !i10b 1
 !s100 UA86H2K^ho2eL>]j6iSa:2
 I8i9Qz7H4k`YIiZW7o0_fA0
@@ -87,69 +139,69 @@ R1
 w1725030747
 8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv
 FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv
-!i122 3
+!i122 5
 L0 1 37
-R5
 R6
+R7
 r1
 !s85 0
 31
-Z11 !s108 1725031313.000000
+R8
 !s107 C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU|C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv|
 !i113 0
-R8
 R9
+R10
 R3
 vsystem
 2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv
 R4
-R10
+R5
 !i10b 1
-!s100 9V;enB^297>gl^gR]jQPR2
-IB^;W;KTlB6113=U`LZB@j2
+!s100 @P=4EV;i^XY^h>E]hJMDD3
+IIE85`99nEao6h_j4O:o^l0
 S1
 R1
-w1725031287
+w1725291666
 8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv
 FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv
 !i122 0
-L0 3 31
-R5
+L0 3 33
 R6
+R7
 r1
 !s85 0
 31
-R7
+R8
 !s107 C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU|C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv|
 !i113 0
-R8
 R9
+R10
 R3
 vtestbench
 2C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv
 R4
 R2
 !i10b 1
-!s100 HI5g7OmRGZi1T>fE5b3173
-I@_mzAUnfHBQ=EkJi2lfe83
+!s100 ezUKfDd]cU7F0CB7W[HZ32
+IjH5SXbUjPlY2jhV][N;4K2
 S1
 R1
-w1725030643
+w1725357396
 8C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv
 FC:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv
-!i122 4
+!i122 6
 L0 5 27
-R5
 R6
+R7
 r1
 !s85 0
 31
-R11
+R8
 !s107 C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU|C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv|
 !i113 0
-R8
 R9
+R10
 R3

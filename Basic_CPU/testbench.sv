@@ -15,8 +15,8 @@ begin
 	clk = 0;
 	
 	// Set first 2 memory locations to value of 64.
-	sys.mem.memory_array [0] = 64;
-	sys.mem.memory_array [1] = 32;
+	//sys.mem.memory_array [0] = 64;
+	//sys.mem.memory_array [1] = 32;
 end
 
 

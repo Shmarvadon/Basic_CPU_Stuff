@@ -26,68 +26,91 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:21:52 on Aug 30,2024
+# Start time: 14:15:29 on Sep 04,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU" C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/system.sv 
 # -- Compiling module system
 # 
 # Top level modules:
 # 	system
-# End time: 16:21:52 on Aug 30,2024, Elapsed time: 0:00:00
+# End time: 14:15:29 on Sep 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:21:52 on Aug 30,2024
+# Start time: 14:15:29 on Sep 04,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU" C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/memory.sv 
 # -- Compiling module memory
 # 
 # Top level modules:
 # 	memory
-# End time: 16:21:52 on Aug 30,2024, Elapsed time: 0:00:00
+# End time: 14:15:29 on Sep 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:21:52 on Aug 30,2024
+# Start time: 14:15:29 on Sep 04,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU" C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/lsu.sv 
 # -- Compiling module lsu
 # 
 # Top level modules:
 # 	lsu
-# End time: 16:21:53 on Aug 30,2024, Elapsed time: 0:00:01
+# End time: 14:15:29 on Sep 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 14:15:29 on Sep 04,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU" C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv 
+# -- Compiling module cpu
+# 
+# Top level modules:
+# 	cpu
+# End time: 14:15:29 on Sep 04,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 14:15:29 on Sep 04,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU" C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 14:15:29 on Sep 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:21:53 on Aug 30,2024
+# Start time: 14:15:29 on Sep 04,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU" C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv 
 # -- Compiling module regs
 # 
 # Top level modules:
 # 	regs
-# End time: 16:21:53 on Aug 30,2024, Elapsed time: 0:00:00
+# End time: 14:15:29 on Sep 04,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 16:21:53 on Aug 30,2024
+# Start time: 14:15:29 on Sep 04,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU" C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv 
 # -- Compiling module testbench
 # 
 # Top level modules:
 # 	testbench
-# End time: 16:21:53 on Aug 30,2024, Elapsed time: 0:00:00
+# End time: 14:15:30 on Sep 04,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  testbench
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" testbench 
-# Start time: 16:21:53 on Aug 30,2024
+# Start time: 14:15:30 on Sep 04,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "cpu(fast)".
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.testbench(fast)
 # Loading work.system(fast)
-# Loading work.regs(fast)
 # Loading work.memory(fast)
+# Loading work.cpu(fast)
+# Loading work.regs(fast)
 # Loading work.lsu(fast)
+# Loading work.alu(fast)
 # 
 # add wave *
 # view structure
@@ -95,111 +118,92 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 200 ns
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-add wave -position end sim:/testbench/sys/reggs/*
-add wave -position end sim:/testbench/sys/lsyou/*
-add wave -position end sim:/testbench/sys/mem/*
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+add wave -position end sim:/testbench/sys/centralprocessingunit/*
+add wave -position end sim:/testbench/sys/centralprocessingunit/registers/*
+add wave -position end sim:/testbench/sys/centralprocessingunit/arithmeticlogic/*
+add wave -position end sim:/testbench/sys/centralprocessingunit/loadstore/*
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading work.testbench(fast)
 # Loading work.system(fast)
-# Loading work.regs(fast)
 # Loading work.memory(fast)
+# Loading work.cpu(fast)
+# Loading work.regs(fast)
 # Loading work.lsu(fast)
+# Loading work.alu(fast)
 run
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
+# Write mempry value: 0000100001001000
 # Causality operation skipped due to absence of debug database file
-run
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-run
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# Write mempry value: xxxxxxxxxxxxxxxx
-# End time: 17:30:20 on Aug 30,2024, Elapsed time: 1:08:27
+# End time: 14:17:22 on Sep 04,2024, Elapsed time: 0:01:52
 # Errors: 0, Warnings: 1

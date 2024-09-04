@@ -1,82 +1,102 @@
 module cpu(
 input clk,
-inout [7:0] data_bus,
-output[15:0] address_bus,
+inout [7:0] memory_data_bus,
+output[15:0] memory_address_bus,
 output memory_write_en,
 output memory_chip_sel
 );
 
-reg [7:0] reg_a;
-reg [7:0] reg_b;
-reg [7:0] reg_c;
-reg [7:0] reg_d;
-
-
-reg [15:0] instr_reg;
-reg [3:0] pipeline_stage_active;
-
+reg [15:0] instruction_reg;
 reg [15:0] program_counter;
+reg [3:0] pipeline_stage_active;
+wire exec_instr;
+reg exec_instr_en;
 
-reg mem_select;
+wire [7:0] gpr_regs_input[3:0];
+wire [7:0] gpr_regs_output[3:0];
+wire [3:0] gpr_regs_write_en;
+
+regs registers(clk, gpr_regs_input, gpr_regs_output, gpr_regs_write_en);
+
+lsu loadstore(exec_instr, memory_data_bus, memory_address_bus, memory_chip_sel, memory_write_en, gpr_regs_input, gpr_regs_output, gpr_regs_write_en, instruction_reg);
+
+alu arithmeticlogic(exec_instr, gpr_regs_input, gpr_regs_output, gpr_regs_write_en, instruction_reg);
+
+//reg [15:0] mem_addr_sel;
+reg mem_chip_sel;
 reg mem_write_en;
-reg [15:0] mem_addr;
 
-assign memory_write_en = mem_write_en;
-assign memory_chip_sel = mem_select;
-assign address_bus = mem_addr;
+// Assign exec_instr_en to drive exec_instr wire.
+assign exec_instr = exec_instr_en;
+
+// Assign the program_counter register to drive memoryaddress if in instruction fetch phase.
+//assign memory_address_bus = pipeline_stage_active < 5 ? program_counter : 'hz;
+assign memory_address_bus = !exec_instr_en ? program_counter : 'hz;
+
+// Assign mem_chip_sel to drive memory_chip_sel wire if instruction fetch phase.
+//assign memory_chip_sel = pipeline_stage_active < 5 ? mem_chip_sel : 'hz;
+assign memory_chip_sel = !exec_instr_en ? mem_chip_sel : 'hz;
+
+// Assign mem_write_en to drive memory_write_en wire if instruction fetch phase.
+//assign memory_write_en = pipeline_stage_active < 5 ? mem_write_en : 'hz;
+assign memory_write_en = !exec_instr_en ? mem_write_en : 'hz;
 
 initial
 begin
 	program_counter = 0;
 	pipeline_stage_active = 0;
-	
-	reg_a = 0;
-	reg_b = 0;
-	reg_c = 0;
-	reg_d = 0;
-	
-	mem_select = 0;
-	mem_write_en = 0;
-	mem_addr = 22;
+	exec_instr_en = 0;
+
 end
 
 always @(posedge clk) begin
 
 	case (pipeline_stage_active)
-	// Prep RAM for instruction fetch.
-	4'b0000:
+	// Prep RAM for instruction fetch & disable execution of instruction.
+	0:
 	begin
-		mem_select <= 1;
+		
+		exec_instr_en <= 0;
+	
+		mem_chip_sel <= 1;
 		mem_write_en <= 0;
-		mem_addr <= program_counter;
 		pipeline_stage_active <= pipeline_stage_active + 1;
 	end
 	
 	// Fetch first byte of instruction.
-	4'b0001:
+	1:
 	begin
-		instr_reg [7:0] <= data_bus;
+		instruction_reg [7:0] <= memory_data_bus;
 		pipeline_stage_active <= pipeline_stage_active + 1;
 	end
 	
 	// Prep RAM for second byte fetch.
-	4'b0010:
+	2:
 	begin
 
-		mem_addr <= mem_addr + 1;
+		program_counter <= program_counter + 1;
 		pipeline_stage_active <= pipeline_stage_active + 1;
 	end
 	
 	// Fetch second byte of instruction.
-	4'b0011:
+	3:
 	begin
-		instr_reg [15:8] <= data_bus;
+		instruction_reg [15:8] <= memory_data_bus;
 		pipeline_stage_active <= pipeline_stage_active + 1;
 	end
 	
-	4'b0100:
+	// Enable execution of instruction.
+	4:
 	begin
+	exec_instr_en <= 1;
+	pipeline_stage_active <= pipeline_stage_active + 1;
+	end
 	
+	// Wait another cycle.
+	5:
+	begin
+		pipeline_stage_active <= 0;
+		program_counter <= program_counter + 1;
 	end
 	
 	endcase

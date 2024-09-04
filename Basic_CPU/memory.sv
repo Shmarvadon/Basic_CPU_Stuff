@@ -8,15 +8,27 @@ input chip_select);
 reg [7:0] memory_array [65536:0];
 reg [7:0] temp_data;
 
-always @(negedge clk) begin
+initial begin
+	memory_array[0] = 8'b00001000;
+	memory_array[1] = 8'b01100000;
+	
+	memory_array[2] = 8'b00001000;
+	memory_array[3] = 8'b01001000;
+	
+	memory_array[4] = 8'b00000000;
+	memory_array[5] = 8'b00000010;
+	
+end
+
+always @(posedge clk) begin
 	if (write_enable)
 		memory_array[addr] <= data;
 		//$display("Write memory value: %b", data);
 		
-	if (!write_enable)
-		temp_data <= memory_array[addr];
+	//if (!write_enable)
+		//temp_data <= memory_array[addr];
 end
 
-assign data = chip_select & !write_enable ? temp_data : 'hz;
+assign data = chip_select & !write_enable ? memory_array[addr] : 'hz;
 
 endmodule
