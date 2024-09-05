@@ -43,7 +43,7 @@ assign memory_write_en = !exec_instr_en ? mem_write_en : 'hz;
 
 initial
 begin
-	program_counter = 0;
+	program_counter = 16'b0000100000000000;
 	pipeline_stage_active = 0;
 	exec_instr_en = 0;
 
@@ -83,17 +83,11 @@ always @(posedge clk) begin
 	begin
 		instruction_reg [15:8] <= memory_data_bus;
 		pipeline_stage_active <= pipeline_stage_active + 1;
+		exec_instr_en <= 1;
 	end
 	
 	// Enable execution of instruction.
 	4:
-	begin
-	exec_instr_en <= 1;
-	pipeline_stage_active <= pipeline_stage_active + 1;
-	end
-	
-	// Wait another cycle.
-	5:
 	begin
 		pipeline_stage_active <= 0;
 		program_counter <= program_counter + 1;
