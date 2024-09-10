@@ -1,4 +1,4 @@
-module lsu(
+module load_store_unit(
 input lsu_en,
 
 // Memory interface stuff.
@@ -82,6 +82,7 @@ always @(instruction) begin
 						
 						// Present write enable & data values on the bus.
 						memory_write_enable_reg <= 1;
+						reg_write_en_reg <= 0;
 					end
 			endcase
 	end
@@ -91,6 +92,7 @@ always @(instruction) begin
 		memory_data <= 0;
 		memory_write_enable_reg <= 0;
 		memory_select <= 0;
+		reg_write_en_reg <= 0;
 	end
 end
 

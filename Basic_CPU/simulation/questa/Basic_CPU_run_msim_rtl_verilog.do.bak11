@@ -11,6 +11,7 @@ vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/cpu.sv}
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/alu.sv}
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/regs.sv}
+vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/pfcu.sv}
 
 vlog -sv -work work +incdir+C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU {C:/Users/harve/Documents/Basic_CPU_Stuff/Basic_CPU/testbench.sv}
 

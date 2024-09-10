@@ -1,52 +1,60 @@
-module cpu(
+module core(
 input clk,
-inout [7:0] memory_data_bus,
-output[15:0] memory_address_bus,
-output memory_write_en,
-output memory_chip_sel
+inout [7:0] mem_dat_bus,
+output[15:0] mem_addr_bus,
+output mem_we,
+output mem_chip_sel
 );
 
-reg [15:0] instruction_reg;
-reg [15:0] program_counter;
+reg [15:0] instr_reg;
+reg [3:0]  pc_addr_space;
 reg [3:0] pipeline_stage_active;
-wire exec_instr;
+
+wire alu_en;
+wire lsu_en;
+wire pfcu_en;
 reg exec_instr_en;
 
-wire [7:0] gpr_regs_input[3:0];
-wire [7:0] gpr_regs_output[3:0];
-wire [3:0] gpr_regs_write_en;
+reg [11:0] pc;
+wire pc_reg_we;
+wire [11:0] pc_inp;
 
-regs registers(clk, gpr_regs_input, gpr_regs_output, gpr_regs_write_en);
+wire [7:0] gprs_inp[3:0];
+wire [7:0] gprs_oup[3:0];
+wire [3:0] gprs_we;
+wire [7:0] alu_status;
 
-lsu loadstore(exec_instr, memory_data_bus, memory_address_bus, memory_chip_sel, memory_write_en, gpr_regs_input, gpr_regs_output, gpr_regs_write_en, instruction_reg);
+registers regs(clk, gprs_inp, gprs_oup, gprs_we);
 
-alu arithmeticlogic(exec_instr, gpr_regs_input, gpr_regs_output, gpr_regs_write_en, instruction_reg);
+load_store_unit lsu(lsu_en, mem_dat_bus, mem_addr_bus, mem_chip_sel, mem_we, gprs_inp, gprs_oup, gprs_we, instr_reg);
 
-//reg [15:0] mem_addr_sel;
-reg mem_chip_sel;
-reg mem_write_en;
+arithmetic_logic_unit alu(alu_en, gprs_inp, gprs_oup, gprs_we, alu_status, instr_reg);
+
+program_flow_control_unit pfcu(pfcu_en, alu_status, pc_inp, pc_reg_we, instr_reg);
+
+reg mem_chip_sel_reg;
+reg mem_we_reg;
 
 // Assign exec_instr_en to drive exec_instr wire.
-assign exec_instr = exec_instr_en;
+assign alu_en = instr_reg [15:14] == 2'b00 ? exec_instr_en : 0;
+assign lsu_en = instr_reg [15:14] == 2'b01 ? exec_instr_en : 0;
+assign pfcu_en = instr_reg [15:14] == 2'b10 ? exec_instr_en : 0;
 
 // Assign the program_counter register to drive memoryaddress if in instruction fetch phase.
-//assign memory_address_bus = pipeline_stage_active < 5 ? program_counter : 'hz;
-assign memory_address_bus = !exec_instr_en ? program_counter : 'hz;
+assign mem_addr_bus = !exec_instr_en ? {pc_addr_space, pc} : 'hz;
 
 // Assign mem_chip_sel to drive memory_chip_sel wire if instruction fetch phase.
-//assign memory_chip_sel = pipeline_stage_active < 5 ? mem_chip_sel : 'hz;
-assign memory_chip_sel = !exec_instr_en ? mem_chip_sel : 'hz;
+assign mem_chip_sel = !exec_instr_en ? mem_chip_sel_reg : 'hz;
 
 // Assign mem_write_en to drive memory_write_en wire if instruction fetch phase.
-//assign memory_write_en = pipeline_stage_active < 5 ? mem_write_en : 'hz;
-assign memory_write_en = !exec_instr_en ? mem_write_en : 'hz;
+assign mem_we = !exec_instr_en ? mem_we_reg : 'hz;
 
 initial
 begin
-	program_counter = 16'b0000100000000000;
+	pc = 12'b000000000000;
+	pc_addr_space = 1;
 	pipeline_stage_active = 0;
 	exec_instr_en = 0;
-
 end
 
 always @(posedge clk) begin
@@ -58,15 +66,15 @@ always @(posedge clk) begin
 		
 		exec_instr_en <= 0;
 	
-		mem_chip_sel <= 1;
-		mem_write_en <= 0;
+		mem_chip_sel_reg <= 1;
+		mem_we_reg <= 0;
 		pipeline_stage_active <= pipeline_stage_active + 1;
 	end
 	
 	// Fetch first byte of instruction.
 	1:
 	begin
-		instruction_reg [7:0] <= memory_data_bus;
+		instr_reg [7:0] <= mem_dat_bus;
 		pipeline_stage_active <= pipeline_stage_active + 1;
 	end
 	
@@ -74,27 +82,38 @@ always @(posedge clk) begin
 	2:
 	begin
 
-		program_counter <= program_counter + 1;
+		pc <= pc + 1;
 		pipeline_stage_active <= pipeline_stage_active + 1;
 	end
 	
-	// Fetch second byte of instruction.
+	// Fetch second byte of instruction & enable execution.
 	3:
 	begin
-		instruction_reg [15:8] <= memory_data_bus;
+		instr_reg [15:8] <= mem_dat_bus;
 		pipeline_stage_active <= pipeline_stage_active + 1;
-		exec_instr_en <= 1;
 	end
 	
-	// Enable execution of instruction.
+	// Execution stuff innit.
 	4:
 	begin
+		exec_instr_en <= 1;
+		pipeline_stage_active <= pipeline_stage_active + 1;
+	end
+	// Execution stuff innit.
+	5: 
+	begin
 		pipeline_stage_active <= 0;
-		program_counter <= program_counter + 1;
+		pc <= pc + 1;
+		
+		// PFCU supporting stuff.
+		if (pc_reg_we & exec_instr_en) begin
+			pc <= pc_inp;
+		end
 	end
 	
 	endcase
 		
+
 end
 
 

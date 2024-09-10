@@ -13,10 +13,6 @@ system sys(clk);
 initial 
 begin
 	clk = 0;
-	
-	// Set first 2 memory locations to value of 64.
-	//sys.mem.memory_array [0] = 64;
-	//sys.mem.memory_array [1] = 32;
 end
 
 
@@ -25,7 +21,7 @@ always
 begin
 	#10 clk <= ~clk;
 	//$display("Read reg value: %b", sys.lsyou.tmp);
-	$display("Write mempry value: %b%b", sys.mem.memory_array[2], sys.mem.memory_array[3]);
+	//$display("Write mempry value: %b%b", sys.mem.memory_array[2], sys.mem.memory_array[3]);
 end
 
 endmodule

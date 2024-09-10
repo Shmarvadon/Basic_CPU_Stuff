@@ -1,10 +1,12 @@
-module alu (
+module arithmetic_logic_unit (
 input alu_en,
 
 // Register Interface stuff
 output [7:0] regs_inp [3:0],
 input  [7:0] regs_oup [3:0],
 output [3:0] regs_we,
+
+output [7:0] alu_status,
 
 input [15:0] inst
 );
@@ -13,6 +15,13 @@ wire [7:0] op_a;
 wire [7:0] op_b;
 reg [3:0] regs_we_reg;
 reg [7:0] result;
+
+reg [7:0] alu_status_reg;
+assign alu_status = alu_status_reg;
+
+initial begin
+	alu_status_reg = 0;
+end
 
 
 // READ THIS https://electronics.stackexchange.com/questions/400034/easy-way-to-define-wire-output-multiplexers-in-verilog
@@ -137,12 +146,10 @@ always @ (inst) begin
 			4'b0010: result <= op_b - op_a;
 			// if instruction is SUB k, A
 			4'b0011: result <= op_b - op_a;
-			
-			
 			// if instruction is RLS A, B
-			4'b0110: result <= {op_a[6:0], 0};
+			4'b0110: result <= {op_a[6:0], 1'b0};
 			// if instruction is RRS A, B
-			4'b0111: result <= {0, op_a[7:1]};
+			4'b0111: result <= {1'b0, op_a[7:1]};
 			// if instruction is AND A, B
 			4'b1000: result <= op_a & op_b;
 			// if instruction is AND k, A
@@ -160,6 +167,9 @@ always @ (inst) begin
 			// if instruction is NOT k, A
 			4'b1111: result <= !op_a;
 		endcase
+		
+		if (result == 0) alu_status_reg[0] = 1;
+		else alu_status_reg[0] = 0;
 	end
 end
 endmodule

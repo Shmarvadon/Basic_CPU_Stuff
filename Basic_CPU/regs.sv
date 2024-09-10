@@ -1,4 +1,4 @@
-module regs(
+module registers(
 input clk,
 input [7:0] regs_in [3:0],
 output [7:0] regs_out [3:0],
